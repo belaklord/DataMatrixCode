@@ -22,6 +22,7 @@ public class AyudaBD extends SQLiteOpenHelper {
         public static final String COLUMNA_ID = "albaran";
         public static final String COLUMNA_MATRICULA1 = "matricula_cam";
         public static final String COLUMNA_MATRICULA2 = "matricula_rem";
+        public static final String ENVIADO = "enviado";
         public static final String FECHA = "fecha";
 
         private static final String TEXT_TYPE = " TEXT";
@@ -32,6 +33,7 @@ public class AyudaBD extends SQLiteOpenHelper {
                         DatosTabla.COLUMNA_ID + " INTEGER PRIMARY KEY," +
                         DatosTabla.COLUMNA_MATRICULA1 + TEXT_TYPE + COMMA_SEP +
                         DatosTabla.FECHA + COMMA_SEP +
+                        DatosTabla.ENVIADO + COMMA_SEP +
                         DatosTabla.COLUMNA_MATRICULA2 + TEXT_TYPE +
                         " )";
 
@@ -53,12 +55,14 @@ public class AyudaBD extends SQLiteOpenHelper {
 
         public static final String LINEA_PEDIDO = "scaneo";
         public static final String ID_ALBARAN = "id_albaran";
+        public  static final String ENVIADO = "enviado";
 
         private static final String TIPE_TEXT = " TEXT";
         private static final String COMA_SEP = ",";
         private static final String CREAR_TABLA = "CREATE TABLE " + Lineas.NOMBRE_TABLA + " (" +
 
                 Lineas.ID_ALBARAN + TIPE_TEXT + COMA_SEP +
+                Lineas.ENVIADO + COMA_SEP +
                 Lineas.LINEA_PEDIDO + ")";
 
 

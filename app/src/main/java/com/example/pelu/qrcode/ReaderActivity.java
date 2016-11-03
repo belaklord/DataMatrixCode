@@ -22,6 +22,8 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+import java.util.Date;
+
 import static com.example.pelu.qrcode.R.id.albaran;
 import static com.example.pelu.qrcode.R.id.camion;
 import static com.example.pelu.qrcode.R.id.matricula_remolque;
@@ -79,6 +81,9 @@ public class ReaderActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN) // version minima de android //
             @Override
             public void onClick(View v) {
+
+
+
 
                             /*
                 COMPROBACION DE LA CONEXION
@@ -169,7 +174,7 @@ public class ReaderActivity extends AppCompatActivity {
 
         String scanContent = result.getContents();
 
-        String date = (DateFormat.format("dd-MM-yyyy hh:mm:ss", new java.util.Date()).toString());
+
 
 
 
@@ -181,7 +186,10 @@ public class ReaderActivity extends AppCompatActivity {
         SQLiteDatabase db = ayudabd.getWritableDatabase();
 
 
-                                            /*
+        String date = (DateFormat.format("dd-MM-yyyy hh:mm:ss", new java.util.Date()).toString());
+
+
+        /*
 
                                INSERCION DATOS TABLA  CABECERA (CAMBIAR A LA CLASE DataBase)
 
@@ -220,6 +228,8 @@ public class ReaderActivity extends AppCompatActivity {
         textoBloque.setText(DataBase.DatosTabla(db2, AyudaBD.DatosTabla.NOMBRE_TABLA));
         contentTxt2.setText(DataBase.DatosTabla(db2, AyudaBD.Lineas.NOMBRE_TABLA));
 
+        dateContent.setText("FECHA:" + date);
+
 
         db.close();
 
@@ -247,7 +257,7 @@ public class ReaderActivity extends AppCompatActivity {
                  */
 
 
-                dateContent.setText("FECHA:" + date);
+
 
             }
         }
