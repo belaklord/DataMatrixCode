@@ -201,6 +201,7 @@ public class ReaderActivity extends AppCompatActivity {
             valores.put(AyudaBD.DatosTabla.COLUMNA_MATRICULA1, matriculaCamion.getText().toString());
             valores.put(AyudaBD.DatosTabla.COLUMNA_MATRICULA2, matriculaRemolque.getText().toString());
             valores.put(AyudaBD.DatosTabla.FECHA, date );
+            valores.put(AyudaBD.DatosTabla.ENVIADO, "no");
 
             ContentValues valores2 = new ContentValues();
 
@@ -209,6 +210,7 @@ public class ReaderActivity extends AppCompatActivity {
 
            valores2.put(AyudaBD.Lineas.LINEA_PEDIDO, scanContent);
            valores2.put(AyudaBD.Lineas.ID_ALBARAN, albaranes.getText().toString());
+           valores2.put(AyudaBD.Lineas.ENVIADO, "no");
 
 
         db.insert(AyudaBD.Lineas.NOMBRE_TABLA, AyudaBD.Lineas.LINEA_PEDIDO, valores2);
