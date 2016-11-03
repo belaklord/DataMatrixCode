@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -24,6 +25,7 @@ import com.google.zxing.integration.android.IntentResult;
 
 import java.util.Date;
 
+import static android.widget.Toast.LENGTH_SHORT;
 import static com.example.pelu.qrcode.R.id.albaran;
 import static com.example.pelu.qrcode.R.id.camion;
 import static com.example.pelu.qrcode.R.id.matricula_remolque;
@@ -33,7 +35,7 @@ import static com.example.pelu.qrcode.R.id.texto22;
 public class ReaderActivity extends AppCompatActivity {
 
 
-    private Button scan_btn, btn_Guardar; // variable del boton //
+    private Button scan_btn, btn_Enviar; // variable del boton //
 
 
     TextView DataMatrix;
@@ -72,16 +74,15 @@ public class ReaderActivity extends AppCompatActivity {
 
 
 
-        btn_Guardar = (Button) findViewById(R.id.send_btn); // boton de guardar
+        btn_Enviar = (Button) findViewById(R.id.send_btn); // boton de guardar
 
 
-        btn_Guardar.setOnClickListener(new View.OnClickListener(){
+        btn_Enviar.setOnClickListener(new View.OnClickListener(){
 
 
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN) // version minima de android //
             @Override
             public void onClick(View v) {
-
 
 
 
@@ -91,20 +92,24 @@ public class ReaderActivity extends AppCompatActivity {
 
                 if(isConnected()){
 
+                    tvIsConnected.setBackgroundColor(Color.GREEN);
+                    tvIsConnected.setText("Conectado");
+
+
                         // se envían los datos que no se hayan envíado // (base de datos --> campo "enviado")
                 }
 
                 else{
 
-                        //mensaje de que no hay conexion //
-                }
+                    tvIsConnected.setBackgroundColor(Color.RED);
+                    tvIsConnected.setText("no hay conexion:" );
+            }
 
 
             }
 
 
         });
-
 
 
         scan_btn = (Button) findViewById(R.id.scan_btn); // obtiene el noton de scan para mostrarlo //
@@ -130,16 +135,6 @@ public class ReaderActivity extends AppCompatActivity {
         });
 
 
-        if(isConnected()){
-
-            tvIsConnected.setBackgroundColor(0xFF00CC00);
-            tvIsConnected.setText("Hay conexión");
-        }
-
-        else{
-
-            tvIsConnected.setText("No hay conexión");
-        }
     }
 
 
@@ -158,14 +153,14 @@ public class ReaderActivity extends AppCompatActivity {
         }
 
 
-
-
     }
 
 
     @RequiresApi(api = Build.VERSION_CODES.N) // requerido para la fecha y hora //
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+
 
         final AyudaBD ayudabd = new AyudaBD(getApplicationContext());
 
@@ -249,7 +244,7 @@ public class ReaderActivity extends AppCompatActivity {
 
             if(result.getContents() == null){
 
-                Toast.makeText(this, "Has cancelado el scanner", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Has cancelado el scanner", LENGTH_SHORT).show();
             }
 
             else{
@@ -257,7 +252,6 @@ public class ReaderActivity extends AppCompatActivity {
                 /*
                 FECHA Y HORA DEL ESCANEO --> eliminar para que no salga en la pantalla
                  */
-
 
 
 

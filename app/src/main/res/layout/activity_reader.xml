@@ -75,24 +75,6 @@
 
         />
 
-    <Button
-        android:id="@+id/scan_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SCAN"
-        android:layout_marginTop="67dp"
-        android:layout_below="@+id/textBox"
-        android:layout_centerHorizontal="true" />
-
-
-    <Button
-        android:id="@+id/send_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ENVIAR"
-        android:layout_marginTop="67dp"
-        android:layout_below="@+id/scan_btn"
-        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/texto22"
@@ -132,10 +114,27 @@
         android:background="#FF0000"
         android:textColor="#FFF"
         android:textSize="18dp"
-        android:text="is connected? "
         android:layout_alignBaseline="@+id/textView"
         android:layout_alignBottom="@+id/textView"
         android:layout_toLeftOf="@+id/scan_btn"
         android:layout_toStartOf="@+id/scan_btn" />
+
+    <Button
+        android:id="@+id/send_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ENVIAR"
+        android:layout_alignBottom="@+id/texto22"
+        android:layout_alignLeft="@+id/scan_btn"
+        android:layout_alignStart="@+id/scan_btn" />
+
+    <Button
+        android:id="@+id/scan_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SCAN"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/textBox"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
