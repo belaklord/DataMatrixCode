@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_reader"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.pelu.qrcode.ReaderActivity">
+
+    <!-- INTERFAZ: TEXTO -->
+
+    <!-- INTERFAZ : BOTONES -->
+
+    <TextView
+        android:id="@+id/scan_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textIsSelectable="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/matricula_remolque"
+        />
+
+    <TextView
+        android:id="@+id/scan_content2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textIsSelectable="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/scan_content"
+        />
+
+    <TextView
+        android:id="@+id/date_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textIsSelectable="true"/> <!-- para que se adapte a la pantalla horizontal o vertical -->
+
+
+    <EditText
+        android:id="@+id/albaran"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nº Albaran"
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:inputType="number" />
+
+    <!-- si va a ser solo el numero cambiar a número -->
+
+
+    <EditText
+        android:id="@+id/camion"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Matrícula(camión)"
+        android:inputType="text"
+        android:layout_below="@+id/albaran"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:id="@+id/textBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textIsSelectable="true"
+        android:layout_below="@+id/scan_content2"
+
+        />
+
+    <Button
+        android:id="@+id/scan_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SCAN"
+        android:layout_marginTop="67dp"
+        android:layout_below="@+id/textBox"
+        android:layout_centerHorizontal="true" />
+
+
+    <Button
+        android:id="@+id/send_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ENVIAR"
+        android:layout_marginTop="67dp"
+        android:layout_below="@+id/scan_btn"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/texto22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:layout_toRightOf="@+id/textBox"
+        android:layout_below="@+id/scan_btn"
+        android:layout_toEndOf="@+id/textBox" />
+
+
+    <EditText
+        android:id="@+id/matricula_remolque"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Matrícula(remolque)"
+        android:inputType="text"
+        android:layout_below="@+id/camion"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QRCode Scanner"
+        android:textSize="25dp"
+        android:layout_below="@+id/date_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tvIsConnected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#FF0000"
+        android:textColor="#FFF"
+        android:textSize="18dp"
+        android:text="is connected? "
+        android:layout_alignBaseline="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_toLeftOf="@+id/scan_btn"
+        android:layout_toStartOf="@+id/scan_btn" />
+
+</RelativeLayout>
