@@ -46,7 +46,6 @@ public class AyudaBD extends SQLiteOpenHelper {
     public static abstract class Lineas implements BaseColumns {
 
                                 /*
-
                        TABLA LINEAS ESCANEADAS
                                 */
 
